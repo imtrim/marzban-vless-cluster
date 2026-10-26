@@ -1,0 +1,30 @@
+name: Предложение
+description: Идея новой возможности или улучшения
+title: "[feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую проблему решает
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Предлагаемое решение
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Альтернативы
+  - type: dropdown
+    id: side
+    attributes:
+      label: Затрагивает
+      options:
+        - master
+        - slave
+        - оба
+        - документация

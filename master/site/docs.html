@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docs — Edgecache CDN</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header>
+    <a class="mark" href="/">Edgecache CDN</a>
+    <nav>
+      <a href="/status.html">Status</a>
+      <a href="/docs.html" aria-current="page">Docs</a>
+    </nav>
+  </header>
+  <main>
+    <p class="kicker">Docs</p>
+    <h1>Fetch by hash. Do not guess paths.</h1>
+    <p class="lede">Public objects are under <code>/o/&lt;sha256&gt;</code>. Unsigned paths return 404. There is no directory listing and no upload API on this node.</p>
+    <p>Cache-Control for hashed objects is <code>public, max-age=31536000, immutable</code>.</p>
+  </main>
+  <footer>Edgecache</footer>
+</body>
+</html>

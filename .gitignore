@@ -1,0 +1,11 @@
+.env
+/var/
+*.sqlite3
+*.key
+*.pem
+.DS_Store
+*.bak-*
+*.bak2-*
+slave/data/
+local/
+local.mk

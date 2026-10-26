@@ -1,0 +1,64 @@
+name: Ошибка
+description: Что-то работает не так, как описано в документации
+title: "[bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Уязвимости сюда не пишите** — сообщайте приватно по [SECURITY.md](../blob/main/SECURITY.md).
+        Перед отправкой пройдите [самопроверку](../blob/main/docs/verification.md) и [решение проблем](../blob/main/docs/troubleshooting.md).
+  - type: dropdown
+    id: side
+    attributes:
+      label: Где проблема
+      options:
+        - master (панель)
+        - slave (нода)
+        - оба / не знаю
+    validations:
+      required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Версия репозитория
+      description: Хеш коммита (`git log --oneline -1`)
+      placeholder: "abc1234"
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: Окружение
+      description: ОС, `docker version`, `docker compose version`, версии образов, если меняли
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Шаги воспроизведения
+      placeholder: |
+        1. make master-install
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Ожидалось и что произошло
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Логи и вывод команд
+      description: "`make master-status`, `make slave-status`, `make master-logs` / `make slave-logs` (последние строки)"
+      render: text
+  - type: checkboxes
+    id: redacted
+    attributes:
+      label: Конфиденциальность
+      options:
+        - label: Я удалил IP-адреса, домены, ключи, UUID и ссылки подписок
+          required: true

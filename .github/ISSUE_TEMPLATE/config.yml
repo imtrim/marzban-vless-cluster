@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Документация и FAQ
+    url: https://github.com/imtrim/marzban-vless-cluster/blob/main/docs/faq.md
+    about: Ответы на частые вопросы и пошаговые руководства
+  - name: Сообщить об уязвимости
+    url: https://github.com/imtrim/marzban-vless-cluster/blob/main/SECURITY.md
+    about: Уязвимости — только приватно, не в issues

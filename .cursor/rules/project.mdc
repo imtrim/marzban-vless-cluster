@@ -1,0 +1,12 @@
+---
+description: marzban-vless-cluster project rules
+alwaysApply: true
+---
+
+Read `AGENTS.md` for layout, commands and conventions.
+
+- POSIX `sh`, `set -eu`, idempotent scripts; firewall rules via `-C || -I`, never flush.
+- Never commit `.env`, keys, certificates, databases, real IPs, domains or home-directory paths. Use `<ip_master>`, `<ip_slave>`, `<master_domain>`, `<slave_domain>`.
+- Keep Docker images pinned by tag and digest.
+- Human docs (README.md, CONTRIBUTING.md, docs/*.md) are in Russian; update them in Russian and document only commands that exist in the Makefile and scripts.
+- Host-specific hooks belong in gitignored `local/` and `local.mk`.

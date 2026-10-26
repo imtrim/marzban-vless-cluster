@@ -1,0 +1,35 @@
+name: marzban-node2
+
+# Marzban Node for panel gozargah/marzban v0.8.4 (REST protocol).
+# Xray inbounds come from the panel; "VLESS TCP REALITY NODE2" listens on :8444
+# and scripts/firewall.sh redirects public :443 -> :8444.
+services:
+  marzban-node:
+    image: gozargah/marzban-node:v0.5.2@sha256:f93791ee35aa98b3851b74e5556c33a1d4607caf3e10781f52f37add14ed974d
+    container_name: marzban-node
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      SERVICE_PROTOCOL: rest
+      SERVICE_PORT: ${SERVICE_PORT:-62050}
+      XRAY_API_PORT: ${XRAY_API_PORT:-62051}
+      SSL_CLIENT_CERT_FILE: /var/lib/marzban-node/ssl_client_cert.pem
+    volumes:
+      - /var/lib/marzban-node:/var/lib/marzban-node
+
+  caddy:
+    image: caddy:2.10-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d
+    container_name: node2-caddy
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      COVER_DOMAIN: ${COVER_DOMAIN:?set COVER_DOMAIN in slave/.env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./site:/srv/site:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

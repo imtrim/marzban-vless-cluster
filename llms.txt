@@ -1,0 +1,30 @@
+# marzban-vless-cluster
+
+> Marzban panel with VLESS TCP REALITY (XTLS Vision) across several servers: one master runs the panel and Xray, each slave runs Marzban Node with its own REALITY inbound and cover site; subscriptions list all servers. Shell scripts + Docker Compose + Makefile.
+
+Human documentation is in Russian.
+
+## Docs
+
+- [README](README.md): overview, quick install
+- [Getting started](docs/getting-started.md): from a new VPS to a working subscription
+- [Adding a slave node](docs/adding-a-node.md): attach a Marzban Node
+- [Verification](docs/verification.md): check every layer with concrete commands
+- [Architecture](docs/architecture.md): traffic flow, why the node inbound uses 8444
+- [Configuration](docs/configuration.md): master/.env and slave/.env variables
+- [Operations](docs/operations.md): updating, backup and restore, firewall
+- [Troubleshooting](docs/troubleshooting.md): symptoms and fixes
+- [FAQ](docs/faq.md): common questions
+- [Warnings](docs/warnings.md): DPI/IP blocking, no guarantees, server security, hosters, legal disclaimer
+
+## Development
+
+- [AGENTS.md](AGENTS.md): layout, commands, conventions, safety rules for AI agents
+- [CONTRIBUTING](CONTRIBUTING.md): pull request process
+- [CHANGELOG](CHANGELOG.md): release notes, Keep a Changelog; planned Ansible playbook
+- [SECURITY](SECURITY.md): private vulnerability reporting, scope
+- [Code of Conduct](CODE_OF_CONDUCT.md): Contributor Covenant 2.1
+
+## Optional
+
+- [Docs index](docs/README.md)

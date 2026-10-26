@@ -1,0 +1,10 @@
+:root{color-scheme:dark}
+body{margin:0;background:#0d1117;color:#c9d1d9;font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.wrap{max-width:860px;margin:40px auto;padding:0 20px}
+.banner{color:#7ee787;font-size:15px;border-bottom:1px solid #30363d;padding-bottom:8px}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+table{width:100%;border-collapse:collapse;margin:16px 0}
+th,td{text-align:left;padding:4px 8px;border-bottom:1px solid #21262d}
+th{color:#8b949e;font-weight:normal}.r{text-align:right}
+.muted{color:#8b949e}hr{border:0;border-top:1px solid #30363d}address{color:#6e7681;font-style:normal}
+code{background:#161b22;padding:1px 4px;border-radius:3px}

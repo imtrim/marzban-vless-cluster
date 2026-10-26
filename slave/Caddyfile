@@ -1,0 +1,27 @@
+# Cover site for node2. Xray REALITY owns public :443 (via redirect to :8444)
+# and forwards unauthenticated TLS here (dest 127.0.0.1:8443).
+# :80 stays public for ACME HTTP-01 and redirects everything else to https.
+{
+	http_port 80
+	https_port 8443
+}
+
+http://{$COVER_DOMAIN} {
+	redir https://{host}{uri} permanent
+}
+
+https://{$COVER_DOMAIN} {
+	bind 127.0.0.1
+	root * /srv/site
+	encode gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options nosniff
+		-Server
+	}
+	file_server
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+}

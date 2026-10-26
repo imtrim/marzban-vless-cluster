@@ -1,0 +1,25 @@
+name: Вопрос
+description: Вопрос по установке или использованию
+title: "[question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: Сначала загляните в [FAQ](../blob/main/docs/faq.md) и [документацию](../blob/main/docs/README.md).
+  - type: textarea
+    id: question
+    attributes:
+      label: Вопрос
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Что уже пробовали
+  - type: checkboxes
+    id: redacted
+    attributes:
+      label: Конфиденциальность
+      options:
+        - label: Я удалил IP-адреса, домены, ключи, UUID и ссылки подписок
+          required: true
